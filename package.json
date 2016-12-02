@@ -1,0 +1,22 @@
+{
+  "name": "record_store_homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/godhar/week_10_weekend_homework.git"
+  },
+  "author": "Pavlos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godhar/week_10_weekend_homework/issues"
+  },
+  "homepage": "https://github.com/godhar/week_10_weekend_homework#readme",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
