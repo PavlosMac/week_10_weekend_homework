@@ -35,12 +35,17 @@ var recordStore;
     });
 
     it('should be able to list the inventory', function(){
-      assert.equal({"vibrasphere", "breathing place", 6.99 : 6}, recordStore.findInventoryFor(record5));
-    })
+      assert.deepEqual({ artist: "vibrasphere", album: "breathing place", price: 6.99, quantity: 6 }, recordStore.findInventoryFor(record5));
+    });
 
-    it('should be able to find records by name', function(){
-      var total = recordStore.sellRecord("gidge");
-      assert.equal( 1458.06, recordStore.bankBalance)
+    it('should be able to sell a record', function(){
+      recordStore.sellRecord(record2);
+      assert.equal(1506.99, recordStore.bankBalance);
+    });
+
+    it('should be able to return total cash and value of inventory', function(){
+      var report = recordStore.getInfo();
+      assert.equal("stock value: 252.68, bank balance: 1500", report);
     })
 
   });
