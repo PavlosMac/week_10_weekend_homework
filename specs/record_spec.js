@@ -21,8 +21,8 @@ var record;
         assert.equal(5.99, record.price);
       });
 
-      it('should have a quantity', function(){
-        assert.equal(8, record.quantity);
+      it('should have a stock level', function(){
+        assert.equal(8, record.stock);
       });
 
     });
