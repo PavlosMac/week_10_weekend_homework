@@ -5,7 +5,7 @@ var Sale = function(customer, store){
 
 
 Sale.prototype = {
-  makeSale: function(quantity, record){
+  tradeOff: function(quantity, record){
     this.customer.buyRecords(quantity, record);
     this.store.sellRecord(quantity, record);
   }
