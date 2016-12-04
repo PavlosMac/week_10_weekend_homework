@@ -2,7 +2,7 @@ var RecordStore = require( '../record_store' );
 var Record = require('../record');
 var Customer = require('../customer');
 var assert = require('assert');
-// var _ = require('lodash');
+var Sale = require('../sale');
 
 
 var record1;
@@ -13,6 +13,7 @@ var record5;
 var record6;
 var recordStore;
 var customer;
+var sale;
 
   describe('Record Store', function(){
 
@@ -46,20 +47,17 @@ var customer;
       recordStore.sellRecord(2, record2);
       assert.equal(1513.98, recordStore.bankBalance);
     });
-    //
-    // it('should be able to return total cash and value of inventory', function(){
-    //   var report = recordStore.getInfo();
-    //   assert.equal("stock value: 252.68, bank balance: 1500", report);
-    // });
-    //
-    // it('should be able to buy a certain number of records', function(){
-    //   customer.buyRecords(1, record6);
-    //
-    //   assert.equal(93.01, customer.cashBalance);
-    // });
 
-    // it('should be able to sell a record, increase balance and decrease stock', function(){
-    //
-    // })
+    it('should be able to return total cash and value of inventory', function(){
+      var report = recordStore.getInfo();
+      assert.equal("stock value: 252.68, bank balance: 1500", report);
+    });
+
+    it('should be able to buy a certain number of records', function(){
+      customer.buyRecords(1, record6);
+      recordStore.sellRecord(1, record6);
+      assert.equal(93.01, customer.cashBalance);
+      assert.equal(1506.99, recordStore.bankBalance);
+    });
 
   });
