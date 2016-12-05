@@ -18,7 +18,7 @@ var record;
       recordStore = new RecordStore('electric Pavs', "Dean Village", 1500);
       customer = new Customer("Jamie", 50);
       record = new Record("vibrasphere", "breathing place", 6.99, 6);
-      sale = new Sale(recordStore, customer);
+      sale = new Sale(customer, recordStore);
 
     });
 
